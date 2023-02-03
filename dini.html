@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yarışma</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  <body style="background-color: #D9ACF5; transition: 0.5s; overflow-x: hidden;" id="body">
+
+    <div class="container-fluid sticky-top bg-white" style="color: #D9ACF5">
+        <div class="row">
+            <div class="col-6">
+                    <h1 class="m-3 fw-bold" style="font-size: 25px;">Karışık</h1>
+            </div>
+            <div class="col-6">
+                <h1 class="m-3 fw-bold float-end " style="font-size: 25px;" id="sayac"></h1>
+            </div>
+        </div>
+    </div>
+    <center>
+    <div class="bg-light m-5 rounded-5 p-1 w-25">
+        <h3 class="text-center fw-bold text-dark">Sorular</h3>
+    </div>
+    </div>
+    </center>
+
+    <center>
+
+    <div class="soru bg-light-subtle rounded-3 p-3 m-5" id="soru-panel" style="transition: 0.5s;">
+        <h5 id="q-counter" class="fw-bold"></h5>
+        <h4 class="baslik text-center fw-bold" id="bas">Başlamak için aşağıdaki butona basınız.</h4><hr><br>
+        <button class="btn btn-warning text-black fw-bold p-3 secenek" id="a" onclick="a()" data-bs-toggle="button" style="display: none;"></button>
+        <button class="btn btn-warning text-black fw-bold p-3 secenek" id="fakea" data-bs-toggle="button" style="display: none;"></button>
+        <button class="btn btn-warning text-black fw-bold p-3 secenek" id="b" onclick="b()" data-bs-toggle="button" style="display: none;"></button>
+        <button class="btn btn-warning text-black fw-bold p-3 secenek" id="fakeb" data-bs-toggle="button" style="display: none;"></button>
+        <button class="btn btn-warning text-black fw-bold p-3 secenek" id="c" onclick="c()" data-bs-toggle="button" style="display: none;"></button>
+        <button class="btn btn-warning text-black fw-bold p-3 secenek" id="fakec" data-bs-toggle="button" style="display: none;"></button>
+        <button class="btn btn-warning text-black fw-bold p-3 secenek" id="d" onclick="d()" data-bs-toggle="button" style="display: none;"></button>
+        <button class="btn btn-warning text-black fw-bold p-3 secenek" id="faked" data-bs-toggle="button" style="display: none;"></button>
+    </div>
+    <button class="btn ac bg-transparent" onclick="sorugetir()" type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="white" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+          <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+      </svg>
+  </button>
+    
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Skorunuz</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <h4 id="dogru" class="text-success fw-bold"></h4>
+              <h4 id="yanlis" class="text-danger fw-bold"></h4>
+              <h4 id="bos" class="text-warning fw-bold"></h4>
+              <h4 id="toplamSure" class="text-warning fw-bold"></h4>
+              <h4 id="toplamSure60" class="text-warning fw-bold" style="display: none;"></h4>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+            </div>
+          </div>
+        </div>
+      </div><br><br>
+      <button type="button" class="btn btn-warning text-white fw-bold" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="display: none;" id="btn-sonuc">
+        Sonuçları Gör
+      </button><br>  
+      
+<button class="btn btn-warning text-white fw-bold" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" id="btn-soru" style="display: none;">Soruları Gör</button>
+<br><button class="btn btn-warning text-white fw-bold" type="button" onclick="window.location.reload()" style="display: none;" id="reload">Tekrar Oyna</button>
+<div class="offcanvas offcanvas-end w-100" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Sorular</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <h5 class="fw-bold" id="sorulanBaslik1"></h5>
+    <p id="sorulanOpa1"></p>
+    <p id="sorulanOpb1"></p>
+    <p id="sorulanOpc1"></p>
+    <p id="sorulanOpd1"></p>
+    <small style="border-bottom: black 1px solid;">Doğru Cevap</small>
+    <p id="dogrucevap1" class="fw-bold text-success text-uppercase"></p>
+    <small style="border-bottom: black 1px solid;">Verilen Cevap</small>
+    <p id="kullanicicevap1" class="fw-bold text-uppercase"></p>
+    <hr>
+    <h5 class="fw-bold" id="sorulanBaslik2"></h5>
+    <p id="sorulanOpa2"></p>
+    <p id="sorulanOpb2"></p>
+    <p id="sorulanOpc2"></p>
+    <p id="sorulanOpd2"></p>
+    <small style="border-bottom: black 1px solid;">Doğru Cevap</small>
+    <p id="dogrucevap2" class="fw-bold text-success text-uppercase"></p>
+    <small style="border-bottom: black 1px solid;">Verilen Cevap</small>
+    <p id="kullanicicevap2" class="fw-bold text-uppercase"></p>
+
+    <hr>
+    <h5 class="fw-bold" id="sorulanBaslik3"></h5>
+    <p id="sorulanOpa3"></p>
+    <p id="sorulanOpb3"></p>
+    <p id="sorulanOpc3"></p>
+    <p id="sorulanOpd3"></p>
+    <small style="border-bottom: black 1px solid;">Doğru Cevap</small>
+    <p id="dogrucevap3" class="fw-bold text-success text-uppercase"></p>
+    <small style="border-bottom: black 1px solid;">Verilen Cevap</small>
+    <p id="kullanicicevap3" class="fw-bold text-uppercase"></p>
+
+    <hr>
+    <h5 class="fw-bold" id="sorulanBaslik4"></h5>
+    <p id="sorulanOpa4"></p>
+    <p id="sorulanOpb4"></p>
+    <p id="sorulanOpc4"></p>
+    <p id="sorulanOpd4"></p>
+    <small style="border-bottom: black 1px solid;">Doğru Cevap</small>
+    <p id="dogrucevap4" class="fw-bold text-success text-uppercase"></p>
+    <small style="border-bottom: black 1px solid;">Verilen Cevap</small>
+    <p id="kullanicicevap4" class="fw-bold text-uppercase"></p>
+
+    <hr>
+    <h5 class="fw-bold" id="sorulanBaslik5"></h5>
+    <p id="sorulanOpa5"></p>
+    <p id="sorulanOpb5"></p>
+    <p id="sorulanOpc5"></p>
+    <p id="sorulanOpd5"></p>
+    <small style="border-bottom: black 1px solid;">Doğru Cevap</small>
+    <p id="dogrucevap5" class="fw-bold text-success text-uppercase"></p>
+    <small style="border-bottom: black 1px solid;">Verilen Cevap</small>
+    <p id="kullanicicevap5" class="fw-bold text-uppercase"></p>
+
+  </div>
+</div>          
+
+    <div class="container-fluid bg-white p-2 fixed-bottom">
+      <div class="row">
+        <div class="col-4">
+          <small style="border-bottom: black 1px solid; transition: 0.5s;">Toplam Puan</small>
+          <h3 class="fw-bold" id="skorTable"></h3>
+        </div>
+        <div class="col-4">
+          <small style="border-bottom: black 1px solid; transition: 0.5s;">Puan Değişimi</small>
+          <h3 class="fw-bold" id="howScore" style="transition: 0.5s;"></h3>
+        </div>
+        <div class="col-4">
+          <small style="border-bottom: black 1px solid; transition: 0.5s;">Cevap Süresi</small>
+          <h3 class="fw-bold" id="time" style="transition: 0.5s;"></h3>
+        </div>
+        
+      </div>
+</center>
+<script src="script.js"></script>    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>
