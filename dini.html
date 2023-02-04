@@ -8,26 +8,31 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
   <body style="background-color: #D9ACF5; transition: 0.5s; overflow-x: hidden;" id="body">
-
-    <div class="container-fluid sticky-top bg-white" style="color: #D9ACF5">
-        <div class="row">
-            <div class="col-6">
-                    <h1 class="m-3 fw-bold" style="font-size: 25px;">Karışık</h1>
-            </div>
-            <div class="col-6">
-                <h1 class="m-3 fw-bold float-end " style="font-size: 25px;" id="sayac"></h1>
-            </div>
-        </div>
-    </div>
     <center>
-    <div class="bg-light m-5 rounded-5 p-1 w-25">
-        <h3 class="text-center fw-bold text-dark">Sorular</h3>
+    <div class="container-fluid fixed-top bg-white">
+      <div class="row">
+        <div class="col-4">
+          <small style="border-bottom: black 1px solid; transition: 0.5s;" class="fw-bold text-dark">Toplam Puan</small>
+          <h3 class="fw-bold" id="skorTable">0</h3>
+        </div>
+        <div class="col-4">
+          <small style="border-bottom: black 1px solid; transition: 0.5s;" class="fw-bold text-dark">Puan Değişimi</small>
+          <h3 class="fw-bold" id="howScore" style="transition: 0.5s;">0</h3>
+        </div>
+        <div class="col-4">
+          <small style="border-bottom: black 1px solid; transition: 0.5s;" class="fw-bold text-dark">Cevap Süresi</small>
+          <h3 class="fw-bold" id="time" style="transition: 0.5s;">0</h3>
+        </div>
+        
+
     </div>
-    </div>
+  </div></center>
+    <center>
+
     </center>
 
     <center>
-
+      <br><br>
     <div class="soru bg-light-subtle rounded-3 p-3 m-5" id="soru-panel" style="transition: 0.5s;">
         <h5 id="q-counter" class="fw-bold"></h5>
         <h4 class="baslik text-center fw-bold" id="bas">Başlamak için aşağıdaki butona basınız.</h4><hr><br>
@@ -40,11 +45,6 @@
         <button class="btn btn-warning text-black fw-bold p-3 secenek" id="d" onclick="d()" data-bs-toggle="button" style="display: none;"></button>
         <button class="btn btn-warning text-black fw-bold p-3 secenek" id="faked" data-bs-toggle="button" style="display: none;"></button>
     </div>
-    <button class="btn ac bg-transparent" onclick="sorugetir()" type="button">
-      <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="white" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
-          <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-      </svg>
-  </button>
     
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -135,20 +135,20 @@
 </div>          
 
     <div class="container-fluid bg-white p-2 fixed-bottom">
+      <button class="btn ac bg-transparent" onclick="sorugetir()" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="black" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+            <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+        </svg>
+    </button>
+  
       <div class="row">
-        <div class="col-4">
-          <small style="border-bottom: black 1px solid; transition: 0.5s;">Toplam Puan</small>
-          <h3 class="fw-bold" id="skorTable"></h3>
+        <div class="col-6">
+                <h2 class="m-3 fw-bold" style="font-size: 25px;">Karışık</h2>
         </div>
-        <div class="col-4">
-          <small style="border-bottom: black 1px solid; transition: 0.5s;">Puan Değişimi</small>
-          <h3 class="fw-bold" id="howScore" style="transition: 0.5s;"></h3>
+        <div class="col-6">
+            <h2 class="m-3 fw-bold  " style="font-size: 25px;" id="sayac"></h2>
         </div>
-        <div class="col-4">
-          <small style="border-bottom: black 1px solid; transition: 0.5s;">Cevap Süresi</small>
-          <h3 class="fw-bold" id="time" style="transition: 0.5s;"></h3>
-        </div>
-        
+    </div>
       </div>
 </center>
 <script src="script.js"></script>    
