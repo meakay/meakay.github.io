@@ -1,0 +1,171 @@
+/* .slide {
+    height: 10px;
+    width: 100%;
+    max-height: 100px;
+    max-width: 100%;
+} */
+body {
+    font-family: "Poppins";
+}
+.navBar {
+    background-color: rgba(0,0,0,1);
+    padding: 10px 5vh;
+    color: aliceblue;
+}
+
+.who {
+    width: max-content;
+    border-bottom: 6px yellowgreen solid;
+    font-weight: 900;
+}
+.carousel-item img{
+    max-width: max-content;
+    max-height: 88vh;
+}
+.cButton {
+    font-weight: 900;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    outline: none;
+    border: none;
+}
+.features{
+    border-left: 2px solid yellowgreen;
+    border-right: 2px solid yellowgreen;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, .4);
+    transform: scale(0.97);
+    transition: 0.4s;
+}
+.features h3{
+    font-weight: 900;
+}
+.features:hover{
+    background-color: yellowgreen;
+    cursor: pointer;
+    color: rgba(0, 0, 0, .6);
+    border-left: 2px solid rgba(0, 0, 0, 1);
+    border-right: 2px solid rgba(0, 0, 0, 1);
+    transform: rotate(1deg);
+}
+.backimg{
+    width: 100px;
+    position: absolute;
+    opacity: 0.3;
+    fill: aliceblue;
+    transform: rotate(13deg);
+}
+.fButton{
+    font-weight: 900;
+    background-color: rgba(0, 0, 0, .0);
+    color: white;
+    padding: 10px 30px;
+    border-radius: 0;
+    transition: 0.4s;
+    border: 2px yellowgreen solid;
+    color: yellowgreen;
+}
+.fButton:hover{
+
+    border: 2px yellowgreen solid;
+    color: white;
+    background-color: yellowgreen;
+}
+.img-thumbnail{
+    border: none;
+    background-color: rgba(0, 0, 0, .0);
+    border-radius: 12px;
+}
+.backgroundimg2{
+    background: rgb(131,58,180);
+    background: linear-gradient(45deg, rgba(131,58,180,0) 0%, rgba(154,205,50,1) 49%, rgba(154,205,50,0) 100%); 
+    color: #222;
+    box-shadow: rgba(154,205,50, 0.56) 0px 22px 70px 4px;
+}
+.backgroundimg{
+    background: rgb(131,58,180);
+    background: linear-gradient(135deg, rgba(131,58,180,0) 0%, rgba(154,205,50,1) 49%, rgba(154,205,50,0) 100%); 
+    color: #222;
+    box-shadow: rgba(154,205,50, 0.56) 0px 22px 70px 4px;
+}
+.focus{
+    border-left: solid 4px yellowgreen;
+    border-bottom:  solid 4px yellowgreen;
+    border-right:solid 4px yellowgreen;
+    transition: 0.4s;
+    padding: 10px;
+    border-radius: 40px 40px 0 0;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    margin-top: 30px;
+}
+.focus:last-child{
+    border-radius: 40px 40px 40px 0;
+}
+.focus:first-child{
+    border-radius: 40px 40px 0 40px;
+}
+.focus h5 {
+    font-weight: 900;
+}
+.focus:hover{
+    background-color: yellowgreen;
+}
+.cover{
+    background-image: url(northern-lights-3273425_1920.jpg);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+.imgbutton{
+    background: rgb(154,205,50);
+    background: radial-gradient(circle, rgba(154,205,50,1) 0%, rgba(252,70,107,0) 100%); 
+    border-radius: 0;
+    padding: 20px;
+    font-weight: 900;
+    transition: 1s;
+}
+.imgbutton:hover{
+    background-color:rgb(154,205,50) ;
+    box-shadow: rgba(154,205,50, 0.56) 0px 22px 70px 4px;
+}
+button:focus{
+    outline: none;
+}
+.exp{
+    background: #799F0C;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ACBB78, #799F0C);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ACBB78, #799F0C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    box-shadow: rgba(154,205,50, 0.25) 0px 50px 100px -20px, rgba(154,205,50, 0.3) 0px 30px 60px -30px, rgba(154,205,50, 0.35) 0px -2px 6px 0px inset;}
+.exp h1{
+    font-weight: 900;
+    font-size: 60px;
+}
+.exp2{
+    font-size: 27px;
+    transition: 0.6s;
+    padding: 20px;
+    background-color: yellowgreen;
+    transform: scale(0.97);
+}
+.exp2 span{
+    font-size: 20px;
+    font-weight: 900;
+}
+.exp2:hover{
+    background-color: yellowgreen;
+    cursor: pointer;
+    transform: scale(1);
+    color: #222;
+    box-shadow: rgba(154,205,50, 0.56) 0px 22px 70px 4px;
+}
+.deneyim p{
+    color: yellowgreen;
+    font-size: 23px;
+}
+.footer{
+    background-image: url(blob-scene-haikei.png);
+    background-repeat: none;
+    background-size: cover;
+}
+.navA {
+    border-right: 1px solid white;
+}
