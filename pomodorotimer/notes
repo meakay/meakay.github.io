@@ -1,0 +1,13 @@
+data-bs-toggle="offcanvas" 
+data-bs-target="#offcanvasBottom" 
+aria-controls="offcanvasBottom"
+
+CoffeTimeSec = CoffeTimeSec - 1;
+            document.querySelector("#CoffeSecondCounter").innerHTML = CoffeTimeSec;
+            if (CoffeTimeSec = 0){
+                CoffeTimeMin = CoffeTimeMin - 1;
+                document.querySelector("#CoffeMinCounter").innerHTML = CoffeTimeMin;
+                if (userMin != 0){
+                    CoffeTimeSec = 60;
+                }
+            }
