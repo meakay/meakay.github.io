@@ -9,8 +9,11 @@ body {
 }
 .navBar {
     background-color: rgba(0,0,0,1);
-    padding: 10px 5vh;
+    padding: 10px 0;
     color: aliceblue;
+}
+.navbar-toggler{
+    outline: none;
 }
 
 .who {
@@ -168,4 +171,53 @@ button:focus{
 }
 .navA {
     border-right: 1px solid white;
+}
+.aboutUsbackimg{
+    background-image: url(binary-code-475664_1920.jpg);
+}
+.btnsend{
+    background-color: yellowgreen;
+    font-weight: 900;
+    border-radius: 0px;
+    background-color:rgb(154,205,50) ;
+    box-shadow: rgba(154,205,50, 0.56) 0px 22px 70px 4px;
+    transition: 0.5s;
+}
+.btnsend:hover{
+    background-color:rgb(154,205,50) ;
+    box-shadow: rgba(255, 255, 255, 0.56) 0px 22px 70px 4px;
+    transform: scale(1.01);
+}   
+.contact{
+    transform: scale(0.98);
+    padding: 45px;
+    background: rgb(131,58,180);
+    background: linear-gradient(45deg, rgba(131,58,180,0) 0%, rgba(154,205,50,1) 49%, rgba(154,205,50,0) 100%); 
+    color: #222;
+    box-shadow: rgba(154,205,50, 0.56) 0px 22px 70px 4px;
+    
+}
+.contact2{
+    transform: scale(0.98);
+    padding: 45px;
+    background: rgb(131,58,180);
+    background: linear-gradient(135deg, rgba(131,58,180,0) 0%, rgba(154,205,50,1) 49%, rgba(154,205,50,0) 100%); 
+    color: #222;
+    box-shadow: rgba(154,205,50, 0.56) 0px 22px 70px 4px;
+
+}
+.form{
+    background-color: #222;
+    outline: none;
+    border: none;
+    color: #f2f2f2;
+    border-radius: 0;
+}
+.form:focus{
+    background-color: #222;
+    outline: none;
+    border: none;
+    color: #f2f2f2;
+    box-shadow: rgba(154,205,50, 0.56) 0px 22px 70px 4px;
+
 }
