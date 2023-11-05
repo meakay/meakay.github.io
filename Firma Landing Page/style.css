@@ -1,3 +1,6 @@
+body{
+  overflow-x: hidden;
+}
 #loader-wrapper {
   position: fixed;
   top: 0;
@@ -202,4 +205,12 @@ a{
     -webkit-transform: translateY(-30px);
             transform: translateY(-30px);
   }
+}
+li{
+  background-color: #30d5c8;
+  width: max-content;
+  padding: 10px;
+  border-radius: 12px;
+  margin-bottom: 4px;
+  border-bottom: #22988f 5px solid;
 }
